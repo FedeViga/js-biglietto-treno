@@ -37,16 +37,25 @@ if (age < 18) {
 
 console.log("prezzo finale: ", price);
 
+// controllo se l'utente ha inserito dei valori accettabili per la distanza e l'età
+if ( isNaN(distance) || isNaN(age) || Number.isInteger(age) || distance < 5 || distance > 1000 || age < 1 || age > 122) {
 
-// taglio prezzo finale alla seconda cifra decimale, ma ho deciso che se il prezzo è un intero lo visualizzo senza decimali
-if (Number.isInteger(price) == true) {
-
-    document.getElementById("price").innerHTML = price + " €";
-
+    document.getElementById("price").innerHTML = "Impossibile calcolare prezzo, inserire valori accettabili" ;
+    
 } else {
 
-    const cutPrice = price.toFixed(2)
-    document.getElementById("price").innerHTML = cutPrice + " €";
-    console.log("prezzo finale con due decimali: ", cutPrice);
+    // taglio prezzo finale alla seconda cifra decimale, ma ho deciso che se il prezzo è un intero lo visualizzo senza decimali
+    if (Number.isInteger(price) == true) {
 
+        document.getElementById("price").innerHTML = price + " €";
+
+    } else {
+
+        const cutPrice = price.toFixed(2)
+        document.getElementById("price").innerHTML = cutPrice + " €";
+        console.log("prezzo finale con due decimali: ", cutPrice);
+
+    }
 }
+
+

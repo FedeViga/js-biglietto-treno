@@ -1,3 +1,7 @@
 .my_col {
     background-image: var(--bs-gradient);
 }
+
+#price, .my_col, hr {
+    border: 2px solid black;
+}
