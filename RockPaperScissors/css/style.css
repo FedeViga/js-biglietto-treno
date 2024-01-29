@@ -1,0 +1,11 @@
+body {
+    height: 100vh;
+}
+
+.my_col, body {
+    background-image: var(--bs-gradient);
+}
+
+#price, .my_col {
+    border: 2px solid black;
+}
